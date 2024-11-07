@@ -1,0 +1,38 @@
+1. setup to take input from input.txt and dump output to output.txt
+
+Terminal -> Configure Tasks -> Configure tasks.json file from template
+
+It will create .vscode/tasks.json file.Paste this snippet there
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compile and run",
+      "type": "shell",
+      "command": "g++ -std=c++17 -Wall -o ${fileBasenameNoExtension} ${file} && .\\${fileBasenameNoExtension}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
+
+
+2. Add your custom cp snippet
+
+ctrl + shift + p - To Access the VS Code Command Palette
+
+search Snippets: Configure Snippets then seach cpp
+it will open cpp.json paste required snippet 
+
+
